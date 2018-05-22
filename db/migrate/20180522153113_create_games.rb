@@ -6,6 +6,7 @@ class CreateGames < ActiveRecord::Migration[5.0]
       t.integer :white_player_id
       t.integer :turn
       t.string  :state
+      t.integer :game_id
       t.timestamps
     end
   end
