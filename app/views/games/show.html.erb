@@ -1,0 +1,130 @@
+<div class="chessboard">
+  <% black_arr = [pawn: "&#9823;", knight: "&#9822;", bishop: "&#9821;", rook: "&#9820;", queen: "&#9819;", king: "&#9818;"]%>
+  <% white_arr = [pawn: "&#9817;", knight: "&#9816;", bishop: "&#9815;", rook: "&#9814;", queen: "&#9813;", king: "&#9812;"]%>
+  <% white_arr2 = ["&#9817;","&#9816;""&#9815;","&#9814;","&#9813;""&#9812;"]%>
+  <% pieces = @game.pieces %>
+  <% y = 0 %>
+  <% until y == 8 %>
+    <% x = 0 %>
+      <% until x == 8 %>
+        <% if (y+x).even? %>
+          <%if y == 1 or y == 6 %>
+            <div class="white">&#9823;</div>
+          <% elsif (x == 0 && y == 0) or (x == 7 && y == 0) %>
+            <div class="white"><%= black_arr[0]%></div>
+          <% elsif (x == 1 && y == 0) or (x == 6 && y == 7) %>
+            <div class="white">&#9822;</div>
+          <% elsif (x == 2 && y == 0) or (x == 5 && y == 7) %>
+            <div class="white">&#9821;</div>
+          <% elsif (x == 3 && y == 0) %>
+            <div class="white">&#9819;</div>
+          <% elsif (x == 4 && y == 0) %>
+            <div class="white">&#9818;</div>
+          <% else %>
+            <div class="white"></div>
+          <% end %>
+        <% else %>
+          <%if y == 1 or y == 6 %>
+            <div class="black">&#9823;</div>
+          <% elsif (x == 0 && y == 7) or (x == 7 && y == 0) %>
+            <div class="black">&#9820;</div>
+          <% else %>
+            <div class="black"></div>
+          <% end %>
+        <% end %>
+        <% x += 1 %>
+    <% end %>
+    <% y += 1 %>
+  <% end %>
+</div>
+
+
+<div class="chessboard">
+  <% white_arr2 = ["\&#9817;","\&#9816;","\&#9815;","\&#9814;","\&#9813;","\&#9812;"]%>
+  <% for x in white_arr2 do%>
+    <div class="black"><%=x.encode%></div>
+  <% end %>
+</div>
+
+<table>
+  <tr>
+    <th class="white">&#9814;</th>
+    <th class="black">&#9816;</th> 
+    <th class="white">&#9815;</th>
+    <th class="black">&#9813;</th>
+    <th class="white">&#9812;</th>
+    <th class="black">&#9815;</th> 
+    <th class="white">&#9816;</th>
+    <th class="black">&#9814;</th>
+  </tr>
+  <tr>
+    <th class="black">&#9817;</th>
+    <th class="white">&#9817;</th> 
+    <th class="black">&#9817;</th>
+    <th class="white">&#9817;</th>
+    <th class="black">&#9817;</th>
+    <th class="white">&#9817;</th> 
+    <th class="black">&#9817;</th>
+    <th class="white">&#9817;</th>
+  </tr>
+  <tr>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+  </tr>
+  <tr>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+  </tr>
+  <tr>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+  </tr>
+  <tr>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    <th class="black"></th>
+    <th class="white"></th>
+    </tr>
+  <tr>
+    <th class="white">&#9823;</th>
+    <th class="black">&#9823;</th> 
+    <th class="white">&#9823;</th>
+    <th class="black">&#9823;</th>
+    <th class="white">&#9823;</th>
+    <th class="black">&#9823;</th> 
+    <th class="white">&#9823;</th>
+    <th class="black">&#9823;</th>
+  </tr>
+  <tr>
+    <th class="black">&#9820;</th>
+    <th class="white">&#9822;</th> 
+    <th class="black">&#9821;</th>
+    <th class="white">&#9818;</th>
+    <th class="black">&#9819;</th>
+    <th class="white">&#9821;</th> 
+    <th class="black">&#9822;</th>
+    <th class="white">&#9820;</th>
+  </tr>
+</table>

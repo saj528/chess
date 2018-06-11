@@ -3,11 +3,10 @@ class CreatePieces < ActiveRecord::Migration[5.0]
     create_table :pieces do |t|
       t.integer :game_id
       t.integer :player_id
-      x_coordinate :integer
-      y_coordinate :integer
+      t.integer :x_coordinate
+      t.integer :y_coordinate 
       t.boolean :captured 
       t.string  :type
-      t.integer :piece_id
       t.timestamps
     end
   end
