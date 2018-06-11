@@ -4,7 +4,6 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.string  :email
       t.integer :wins
       t.integer :losses
-      t.integer :player_id
       t.timestamps
     end
   end
