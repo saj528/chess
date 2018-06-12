@@ -11,7 +11,27 @@
   <body>
     <nav class="navbar navbar-light bg-dark">
       <span class="navbar-brand mb-0 h1 text-white">Chess</span>
+      <ul class="navbar-nav ">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link text-white' %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'Sign in', new_user_session_path, class: 'nav-link text-white' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link text-white' %>
+          </li>
+        <% end %>
+    </ul>
     </nav>
+    <% if notice.present? %>
+      <p class="alert alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
