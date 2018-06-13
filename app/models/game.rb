@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
   has_many :pieces
-  has_one :player
+  belongs_to :white_player, class_name: "Player"
+  belongs_to :black_player, class_name: "Player"
 end
