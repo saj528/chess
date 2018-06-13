@@ -4,7 +4,6 @@ class GamesController < ApplicationController
   end
 
   def show
-    id = params[:id]
-    @game = Game.find(id)
+    @game = Game.last
   end
 end

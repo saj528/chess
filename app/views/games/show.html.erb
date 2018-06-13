@@ -1,20 +1,36 @@
 <div class="chessboard">
-  <% type_black = [pawn: "&#9823;", knight: "&#9822;", bishop: "&#9821;", rook: "&#9820;", queen: "&#9819;", king: "&#9818;"]%>
-  <% type_white = [pawn: "&#9817;", knight: "&#9816;", bishop: "&#9815;", rook: "&#9814;", queen: "&#9813;", king: "&#9812;"]%>
-  
+  <% black_arr = [pawn: "&#9823;", knight: "&#9822;", bishop: "&#9821;", rook: "&#9820;", queen: "&#9819;", king: "&#9818;"]%>
+  <% white_arr = [pawn: "&#9817;", knight: "&#9816;", bishop: "&#9815;", rook: "&#9814;", queen: "&#9813;", king: "&#9812;"]%>
+  <% white_arr2 = ["&#9817;","&#9816;""&#9815;","&#9814;","&#9813;""&#9812;"]%>
   <% pieces = @game.pieces %>
   <% y = 0 %>
   <% until y == 8 %>
     <% x = 0 %>
       <% until x == 8 %>
         <% if (y+x).even? %>
-        <% pieces.each do |piece|%>
-          <%if piece.x_coordinate == x && piece.y_coordinate == y %>
-            <div class="white">piece.type</div>
+          <%if y == 1 or y == 6 %>
+            <div class="white">&#9823;</div>
+          <% elsif (x == 0 && y == 0) or (x == 7 && y == 0) %>
+            <div class="white"><%= black_arr[0]%></div>
+          <% elsif (x == 1 && y == 0) or (x == 6 && y == 7) %>
+            <div class="white">&#9822;</div>
+          <% elsif (x == 2 && y == 0) or (x == 5 && y == 7) %>
+            <div class="white">&#9821;</div>
+          <% elsif (x == 3 && y == 0) %>
+            <div class="white">&#9819;</div>
+          <% elsif (x == 4 && y == 0) %>
+            <div class="white">&#9818;</div>
+          <% else %>
+            <div class="white"></div>
           <% end %>
-        <% end %>
         <% else %>
-        #black
+          <%if y == 1 or y == 6 %>
+            <div class="black">&#9823;</div>
+          <% elsif (x == 0 && y == 7) or (x == 7 && y == 0) %>
+            <div class="black">&#9820;</div>
+          <% else %>
+            <div class="black"></div>
+          <% end %>
         <% end %>
         <% x += 1 %>
     <% end %>
